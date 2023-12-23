@@ -1,0 +1,822 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Komika Axis';
+	src: url('assets/fonts/komika-axis.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.sansAppContainer {
+	position: relative;
+	min-height: 100vh;
+	height: auto;
+}
+
+.sansLoadingContainer {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.sansLoadingImage {
+	width: 100px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.sansNav {
+	background-color: transparent;
+	backdrop-filter: blur(5px);
+	padding: 5px 10px;
+}
+
+.sansNavItem {
+	border-radius: 20px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sansNavItem:hover {
+	cursor: pointer;
+	background-color: rgba(235, 50, 35, 1);
+}
+
+.sansHeroContainer {
+	width: 100%;
+	min-height: 586px;
+	height: calc(100vh - 70px);
+	overflow: hidden;
+	background-image: url('assets/comic-pattern-red.png');
+	background-repeat: repeat;
+	background-size: 300px;
+}
+
+.sans404Container {
+	/* background-image: url('assets/comic-pattern-black.png'); */
+}
+
+.sansHeroCard {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	position: absolute;
+	top: 85px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	max-width: 800px;
+	height: 75%;
+	max-height: 600px;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.sansHeroImage {
+	display: inline-block;
+	width: 320px;
+	height: auto;
+	border-radius: 20px;
+	outline: 6px solid black;
+	animation: shake 4s;
+	animation-iteration-count: infinite;
+	filter: saturate(110%);
+}
+
+.sansHeroImage:hover {
+	filter: saturate(0%);
+	animation-play-state: paused;
+	cursor: pointer;
+}
+
+.sansHeroDetails {
+	display: inline-block;
+	width: calc(100% - 320px);
+	min-width: 320px;
+	padding: 5px 0px 5px 20px;
+}
+
+.sansHeroTitle {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	color: white;
+	font-family: 'Komika Axis';
+	text-shadow: 4px 4px 10px rgba(0, 0, 0, 1), 0px 1px 0 #000, 1px 2px 0 #000, 2px 3px 0 #000, 3px 4px 0 #000, 4px 5px 0 #000, 5px 6px 0 #000;
+	min-width: 305px;
+	width: calc(100% - 40px);
+	font-size: 48px;
+	text-align: center;
+	margin-top: 75px;
+}
+
+.sansHeroDescription {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	text-shadow: 4px 4px 10px rgba(0, 0, 0, 1), 0px 1px 0 #000, 1px 2px 0 #000, 2px 3px 0 #000, 3px 4px 0 #000;
+	color: white;
+	border-radius: 20px;
+	border: 3px dashed white;
+	padding: 20px;
+	width: calc(100% - 40px);
+	margin-top: 20px;
+	background-image: radial-gradient(ellipse farthest-corner, transparent 0%, transparent 35%, black 30%, black 40%, transparent 90%), radial-gradient(ellipse farthest-corner at 0px 0px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 50%), radial-gradient(ellipse farthest-corner at 8px 8px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 50%), radial-gradient(ellipse farthest-corner at 0px 8px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 40%), radial-gradient(ellipse farthest-corner at 8px 0px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 50%), linear-gradient(40deg, transparent 0, black 45%, black 50%, black 55%, transparent 100%);
+	background-size: 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 100% 100%;
+}
+
+/* .sans404Description {
+	background-image: radial-gradient(ellipse farthest-corner, transparent 0%, transparent 35%, black 30%, black 40%, transparent 90%), radial-gradient(ellipse farthest-corner at 0px 0px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 50%), radial-gradient(ellipse farthest-corner at 8px 8px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 50%), radial-gradient(ellipse farthest-corner at 0px 8px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 40%), radial-gradient(ellipse farthest-corner at 8px 0px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 50%), linear-gradient(40deg, transparent 0, transparent 20%, #eb3223 50%, transparent 80%, transparent 100%);
+	background-size: 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 100% 100%;
+} */
+
+.sansEmphasis {
+	font-family: 'Komika Axis';
+	border-radius: 5px;
+	margin-top: 10px;
+	line-height: 25px;
+}
+
+.sansHeroButton {
+	position: relative;
+	left: 50%;
+	transform: scale(1.0) translateX(-50%);
+	font-family: 'Komika Axis';
+	background-color: #ecbd00;
+	color: black;
+	border: 3px solid black;
+	padding: 0px 10px 3px 10px;
+	border-radius: 20px;
+	margin-top: 10px;
+}
+
+.sansHeroButton:hover {
+	cursor: pointer;
+	transform: scale(1.20) rotate(-3deg) translateX(-41.6%);
+	filter: saturate(200%);
+}
+
+.sansPromoBackground {
+	background-image: url('assets/comic-pattern-black.png');
+	background-repeat: repeat;
+	background-size: 300px;
+}
+
+.sansCard {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	position: relative;
+	min-width: 260px;
+	max-width: 260px;
+	margin: 0.5rem;
+	border-radius: 10px;
+}
+
+.sansImage {
+	filter: saturate(110%);
+	border-radius: 10px;
+	border: 1px dashed white;
+}
+
+.sansImage:hover {
+	cursor: pointer;
+	opacity: .8;
+}
+
+.sansTitle {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	height: 90px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+	font-size: 18px;
+	z-index: 12;
+	color: white;
+	padding-top: 5px;
+	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+	border-radius: 20px;
+}
+
+.sansDetailsBackground {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 150px;
+	margin: 0;
+	padding: 0;
+	z-index: 10;
+	background-image: radial-gradient(ellipse farthest-corner, transparent 0%, transparent 35%, #222 30%, #222 40%, transparent 90%), radial-gradient(ellipse farthest-corner at 0px 0px, transparent 0%, transparent 20%, #222 15%, #222 20%, transparent 50%), radial-gradient(ellipse farthest-corner at 8px 8px, transparent 0%, transparent 20%, #222 15%, #222 20%, transparent 50%), radial-gradient(ellipse farthest-corner at 0px 8px, transparent 0%, transparent 20%, #222 15%, #222 20%, transparent 40%), radial-gradient(ellipse farthest-corner at 8px 0px, transparent 0%, transparent 20%, #222 15%, #222 20%, transparent 50%), linear-gradient(40deg, black 0, black 30%, black 50%, black 70%, black 100%);
+	background-size: 8px 8px, 8px 8px, 8px 8px, 8px 8px, 8px 8px, 100% 100%;
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 1)));
+}
+
+.sansPriceContainer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 11;
+	transform: scale(1.0);
+}
+
+.sansPriceContainer:hover {
+	cursor: pointer;
+	transform: scale(1.5);
+}
+
+.sansPrice {
+	font-family: 'Komika Axis';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: translate(-50px, 50px);
+	background-color: #ecbd00;
+	color: black;
+	border: none;
+	z-index: 12;
+	width: 100px;
+	height: 100px;
+	aspect-ratio: 1;
+	overflow: hidden;
+	clip-path: polygon(100.00% 50.00%, 78.98% 57.76%, 93.30% 75.00%, 71.21% 71.21%, 75.00% 93.30%, 57.76% 78.98%, 50.00% 100.00%, 42.24% 78.98%, 25.00% 93.30%, 28.79% 71.21%, 6.70% 75.00%, 21.02% 57.76%, 0.00% 50.00%, 21.02% 42.24%, 6.70% 25.00%, 28.79% 28.79%, 25.00% 6.70%, 42.24% 21.02%, 50.00% 0.00%, 57.76% 21.02%, 75.00% 6.70%, 71.21% 28.79%, 93.30% 25.00%, 78.98% 42.24%)
+}
+
+.priceOffset {
+	background-color: black;
+	z-index: 10;
+	width: 120px;
+	height: 120px;
+	transform: translate(-55px, 60px);
+}
+
+.sansDollarSign {
+	font-size: 11px;
+	transform: translate(12px, -30px);
+}
+
+.sansPriceInteger {
+	font-size: 23px;
+	transform: rotate(5deg) translate(8px, -18px);
+}
+
+.sansPriceDecimal {
+	font-size: 10px;
+	transform: translate(11px, -13px);
+}
+
+.sansActionContainer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	transform: translate(-5px, -1px);
+	z-index: 12;
+}
+
+.sansAddToCart {
+	font-family: 'Komika Axis';
+	font-size: 12px;
+	text-align: center;
+	vertical-align: middle;
+	width: 40px;
+	height: 22px;
+	color: white;
+	border-radius: 10px;
+	position: relative;
+	border: none;
+	background-color: rgba(235, 50, 35, 1);
+	outline: 3px solid black;
+	outline-offset: 0px;
+	z-index: 13;
+	animation: shake 2s;
+	animation-iteration-count: infinite;
+	animation-play-state: paused;
+}
+
+.sansAddToCart:hover {
+	cursor: pointer;
+	background-color: rgba(235, 50, 35, .6);
+	animation-play-state: running;
+}
+
+.sansAddToCart:disabled {
+	filter: saturate(0%);
+	animation-play-state: paused;
+	cursor: not-allowed;
+}
+
+.sansAddedToCartLabel {
+	font-family: 'Komika Axis';
+	color: white;
+	transform: translateY(-3px);
+	font-size: 12px;
+	transition: transform 0.3s ease-in-out;
+	transform-origin: bottom center;
+}
+
+
+.sansPlusSvg {
+	fill: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(0px, 0px);
+	width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	border-radius: 20px;
+}
+
+.sansPlusSvg>path {
+	transform: scale(1.1) translate(-0.5px, 3.5px);
+}
+
+.sansCheckoutContainer {
+	background-image: url('assets/comic-pattern-black.png');
+	background-repeat: repeat;
+	background-size: 300px;
+	min-height: 646px;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	padding: 0px 20px 60px 20px;
+}
+
+.sansCheckoutCard {
+	display: inline-block;
+	box-shadow: none;
+	min-width: 220px;
+	width: 245px;
+	max-width: 270px;
+	height: 500px;
+	margin: 10px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, .3);
+	overflow: hidden;
+	border: 1px dashed white;
+}
+
+.sansCheckoutImage {
+	position: relative;
+	left: 50%;
+	margin-top: 10px;
+	transform: translateX(-50%);
+	min-height: 345px;
+	height: 345px;
+	max-height: 345px;
+	width: auto;
+	border-radius: 10px;
+}
+
+.sansCheckoutDetailsContainer {
+	position: relative;
+	width: 100%;
+	height: 144px;
+	padding: 10px;
+	border-radius: 10px;
+	z-index: 21;
+}
+
+.sansCheckoutTitle {
+	font-family: 'Komika Axis';
+	color: white;
+}
+
+.sansCheckoutTotal {
+	font-family: 'Komika Axis';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 25;
+	transform: scale(1.0) translate(-52px, 60px);
+	background-color: #ecbd00;
+	overflow: hidden;
+	width: 120px;
+	height: 120px;
+	clip-path: polygon(100.00% 50.00%, 78.98% 57.76%, 93.30% 75.00%, 71.21% 71.21%, 75.00% 93.30%, 57.76% 78.98%, 50.00% 100.00%, 42.24% 78.98%, 25.00% 93.30%, 28.79% 71.21%, 6.70% 75.00%, 21.02% 57.76%, 0.00% 50.00%, 21.02% 42.24%, 6.70% 25.00%, 28.79% 28.79%, 25.00% 6.70%, 42.24% 21.02%, 50.00% 0.00%, 57.76% 21.02%, 75.00% 6.70%, 71.21% 28.79%, 93.30% 25.00%, 78.98% 42.24%)
+}
+
+.sansCheckoutDollarSign {
+	position: absolute;
+	font-size: 13px;
+	transform: rotate(5deg) translate(57px, 10px);
+}
+
+.sansCheckoutIntegerContainer {
+	position: absolute;
+	font-size: 20px;
+	transform: rotate(8deg) translate(74px, 17px);
+}
+
+.sansCheckoutInteger {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.sansCheckoutDecimal {
+	position: absolute;
+	font-size: 9px;
+	transform: translate(84px, 35px);
+}
+
+.sansCheckoutQuantity {
+	font-weight: 700;
+	color: black;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%, -10px);
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	border-radius: 20px;
+	font-size: 15px;
+	background-color: white;
+}
+
+.sansCheckoutButtonContainer {
+	font-family: 'Komika Axis';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transform: translate(-10px, -10px);
+}
+
+.sansPlusButton,
+.sansMinusButton {
+	color: rgba(235, 50, 35, 1);
+	outline: 2px solid rgba(235, 50, 35, 1);
+	font-size: 22px;
+	width: 25px;
+	height: 25px;
+	border-radius: 25px;
+	line-height: 20px;
+}
+
+.sansPlusButton {
+	transform: translateX(-10px);
+	color: white;
+	outline-color: white;
+}
+
+.sansCheckoutButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.sansCheckoutButtonText {
+	padding-left: 5px;
+}
+
+.sansMinusButton:hover {
+	color: white;
+	background-color: rgba(235, 50, 35, 1);
+}
+
+.sansPlusButton:hover {
+	color: black;
+	background-color: white;
+}
+
+.sansCart {
+	position: relative;
+	border: none;
+	color: white;
+	background-image: url('assets/comic-pattern-red.png');
+	background-repeat: repeat;
+	background-size: 300px;
+	vertical-align: top;
+	padding: 10px;
+}
+
+.sansCartEmpty {
+	background-image: url('assets/comic-pattern-yellow.png');
+}
+
+.sansCartImage {
+	position: absolute;
+	width: calc(100% - 20px);
+	border-radius: 20px;
+	border: 3px solid black;
+}
+
+.sansCartTitle {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 260px;
+	top: 200px;
+	font-family: 'Komika Axis';
+	text-shadow: 4px 4px 10px rgba(0, 0, 0, 1), 0px 1px 0 #000, 1px 2px 0 #000, 2px 3px 0 #000, 3px 4px 0 #000;
+	font-size: 14px;
+	text-align: center;
+}
+
+.sansCartStoreName {
+	font-size: 22px;
+}
+
+.sansCartItemContainer {
+	position: absolute;
+	top: 264px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 200px;
+	padding: 6px 10px;
+	border-radius: 10px;
+	border: 2px dashed white;
+	text-align: center;
+	font-size: 13px;
+	background-image: radial-gradient(ellipse farthest-corner, transparent 0%, transparent 35%, black 30%, black 40%, transparent 90%), radial-gradient(ellipse farthest-corner at 0px 0px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 50%), radial-gradient(ellipse farthest-corner at 8px 8px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 50%), radial-gradient(ellipse farthest-corner at 0px 8px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 40%), radial-gradient(ellipse farthest-corner at 8px 0px, transparent 0%, transparent 20%, #333 15%, #333 20%, transparent 50%), linear-gradient(40deg, transparent 0, black 49%, black 50%, black 51%, transparent 100%);
+	background-size: 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 100% 100%;
+}
+
+.sansCartItemSpacing {
+	top: 274px;
+}
+
+.sansCartLabel {
+	text-transform: lowercase;
+}
+
+.sansCartItemDollarSign {
+	font-size: 9px;
+	vertical-align: top;
+	padding-right: 2px;
+}
+
+.sansCartTotalContainer {
+	font-family: 'Komika Axis';
+	position: absolute;
+	top: 347px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: 100px;
+	background-color: #ecbd00;
+	z-index: 21;
+	clip-path: polygon(100.00% 50.00%, 78.98% 57.76%, 93.30% 75.00%, 71.21% 71.21%, 75.00% 93.30%, 57.76% 78.98%, 50.00% 100.00%, 42.24% 78.98%, 25.00% 93.30%, 28.79% 71.21%, 6.70% 75.00%, 21.02% 57.76%, 0.00% 50.00%, 21.02% 42.24%, 6.70% 25.00%, 28.79% 28.79%, 25.00% 6.70%, 42.24% 21.02%, 50.00% 0.00%, 57.76% 21.02%, 75.00% 6.70%, 71.21% 28.79%, 93.30% 25.00%, 78.98% 42.24%)
+}
+
+.sansCartTotalContainerOffset {
+	background-color: black;
+	transform: translate(calc(-50% + 10px), 5px);
+	z-index: 20;
+}
+
+.sansCartTotalLabel {
+	font-family: 'Komika Axis';
+	position: absolute;
+	top: 375px;
+	font-size: 15px;
+	text-shadow: 4px 4px 10px rgba(0, 0, 0, 1), 0px 1px 0 #000, 1px 2px 0 #000, 2px 3px 0 #000, 3px 4px 0 #000;
+	transform: rotate(-40deg) translateX(30px);
+}
+
+.sansCartTotalPrice {
+	position: absolute;
+	font-size: 25px;
+	left: 50%;
+	color: black;
+	transform: translate(calc(-50%), 30px);
+}
+
+.sansCartTotalDollarSign {
+	position: absolute;
+	font-size: 12px;
+	transform: translate(-8px, 9px);
+}
+
+.sansCartTotalInteger {
+	font-size: 25px;
+}
+
+.sansCartTotalDecimal {
+	position: absolute;
+	font-size: 9px;
+	transform: translate(-3px, -3px);
+}
+
+.sansCartShippingFree {
+	text-transform: uppercase;
+	color: #ecbd00;
+}
+
+.sansCartCheckoutButtonContainer {
+	position: relative;
+}
+
+.sansCartCheckoutButton {
+	font-weight: 700;
+	text-transform: lowercase;
+	position: absolute;
+	top: 442px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	padding: 5px;
+	border-radius: 10px;
+	background-color: white;
+	color: black;
+	border: 3px solid black;
+}
+
+.sansCartCheckoutButton:hover {
+	cursor: pointer;
+	background-color: black;
+	color: white;
+	border: 2px dashed white;
+}
+
+.sansOneDigitDecimal {
+	transform: translate(78px, 35px);
+}
+
+.sansThreeDigits {
+	font-size: 14px;
+	transform: translate(-50%, 5px);
+}
+
+.sansFourDigits {
+	font-size: 17px;
+}
+
+.sansFourDigitsDecimal {
+	transform: translate(-4px, 4px);
+	font-size: 9px;
+}
+
+.sansFooter {
+	position: absolute;
+	background-color: transparent;
+	height: 60px;
+	padding: 0px 10px;
+	z-index: 20;
+}
+
+.sansFooterText {
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	backdrop-filter: blur(1px);
+}
+
+/* Styling Classes */
+.sansFont {
+	font-family: 'Komika Axis';
+}
+
+.fontSize50 {
+	font-size: 50px;
+}
+
+.backgroundColorTransparent {
+	background-color: transparent;
+}
+
+.backgroundColorRed {
+	background-color: red;
+}
+
+.backgroundColorGreen {
+	background-color: green;
+}
+
+.backgroundColorYellow {
+	background-color: yellow;
+}
+
+.backgroundColorBlue {
+	background-color: blue;
+}
+
+.backgroundColorPink {
+	background-color: pink;
+}
+
+.backgroundColorOrange {
+	background-color: orange;
+}
+
+.borderRadius10 {
+	border-radius: 10px;
+}
+
+.sansTextShadow {
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Positioning Classes */
+.positionAbsolute {
+	position: absolute;
+}
+
+.displayNone {
+	display: none;
+}
+
+.textAlignCenter {
+	text-align: center;
+}
+
+::selection {
+	background: rgba(235, 50, 35, .6);
+	/* WebKit/Blink Browsers */
+	color: #fff;
+}
+
+::-moz-selection {
+	background: rgba(235, 50, 35, .6);
+	/* Gecko Browsers */
+	color: #fff;
+}
+
+@media (max-width: 821px) {
+	.sansHeroTitle {
+		font-size: 40px;
+	}
+}
+
+@media (max-width: 733px) {
+	.sansHeroContainer {
+		height: 935px;
+	}
+
+	.sansHeroTitle {
+		margin-top: 0px;
+	}
+
+	.sansHeroDetails {
+		padding: 10px;
+	}
+
+	.sansFooterText {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 380px) {
+	.sansFooterText {
+		font-size: 9px;
+	}
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(0px, 0px) rotate(0deg);
+	}
+
+	10% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
+
+	20% {
+		transform: translate(1px, 2px) rotate(1deg);
+	}
+
+	30% {
+		transform: translate(0px, -1px) rotate(0deg);
+	}
+
+	40% {
+		transform: translate(-2px, 1px) rotate(1deg);
+	}
+
+	50% {
+		transform: translate(-0.5px, 2.5px) rotate(-1.5deg);
+	}
+
+	60% {
+		transform: translate(1.5px, -1px) rotate(0.5deg);
+	}
+
+	70% {
+		transform: translate(1px, 2px) rotate(-1deg);
+	}
+
+	80% {
+		transform: translate(-2.5px, -0.5px) rotate(1deg);
+	}
+
+	90% {
+		transform: translate(-1px, 1.5px) rotate(-0.5deg);
+	}
+
+	100% {
+		transform: translate(0px, 0px) rotate(0deg);
+	}
+}
