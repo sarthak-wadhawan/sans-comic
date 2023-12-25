@@ -1,18 +1,38 @@
 # Sans Comic
 
-An e-commerce web application that allows customers to purchase digital comics and graphic novels. Built with JavaScript, React, Tailwind CSS, and DaisyUI. [Live Link](https://sanscomic.netlify.app/)<br/>
+An e-commerce web frontend that allows customers to purchase digital Marvel comics and graphic novels. Built with JavaScript, React, Tailwind CSS, and Marvel API. [Live Link](https://sanscomic.netlify.app/)<br/>
 <br/>
 
-![sanscomics](https://github.com/joshuakellyeng/sans-comic/blob/main/src/assets/sans-comic.png?raw=true)<br/>
+<img src="sc_screenshots/sans-comic.png"  alt="sign in" width="600"><br/>
 
-## Technologies Used
+
+### Functionality
+
+- Allows users to explore the Marvel API with beautifully-designed comic cards. 
+- Responsive design across all devices
+
+### Demo
+
+1. Home page - animated gifs and cards on page load
+
+![page-load](sc_screenshots/page-load.gif)<br/>
+
+2. Explore Comics - animated comic cards and buttons
+
+![explore-comics](sc_screenshots/explore-comics.gif)<br/>
+
+3. Add To Cart - add multiple items to cart from explore page and cart page
+
+![add-to-cart](sc_screenshots/add-to-cart.gif)<br/>
+
+4. Remove From Cart - remove items from cart with dynamically changing cart pricing and cart details
+
+![remove-from-cart](sc_screenshots/remove-from-cart.gif)<br/>
+
+### Technologies Used
 
 - JavaScript
 - React
 - Tailwind CSS
-- Daisy UI
+- Marvel API
 
-### Functionality
-
-- Allows customers to pre-order comics before release
-- Responsive Web Design
